@@ -7,7 +7,6 @@
     "@craco/craco": "^7.1.0",
     "antd": "^5.0.0",
     "antd-img-crop": "^4.12.2",
-    "axios": "^1.7.9",
     "craco-less": "^3.0.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
@@ -38,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://127.0.0.1:5003"
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'http://127.0.0.1:5003',  // 注意端口要和后端一致
+  baseURL: 'http://127.0.0.1:5004',  // 注意端口要和后端一致
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json'

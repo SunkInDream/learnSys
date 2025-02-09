@@ -245,7 +245,7 @@ const UserInfo = ({ userInfo, onUpdate }) => {
               </Row>
 
               {isEditing && (
-                <Form.Item>
+                <Form.Item style={{display:'flex',justifyContent:'flex-end'}}>
                   <Button type="primary" htmlType="submit">
                     保存修改
                   </Button>
