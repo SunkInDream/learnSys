@@ -102,18 +102,5 @@ def register():
             'message': '服务器错误'
         }), 500
 
-# 首页接口
-@bp.route('/')
-def index():
-    return jsonify({
-        'message': '欢迎使用学习助手API',
-        'status': 'running',
-        'endpoints': {
-            'auth': {
-                'login': '/api/auth/login',
-                'register': '/api/auth/register'
-            },
-            'feedback': '/api/feedback'
-        }
-    })
+
 
