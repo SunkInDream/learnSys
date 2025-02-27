@@ -1,12 +1,15 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, send_from_directory
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
 from app.models.user import User
 from app import db
+import os
 
-auth_bp = Blueprint('auth', __name__)
+# 创建路由蓝图
+bp = Blueprint('main', __name__)
 
-@auth_bp.route('/login', methods=['POST'])
+# 登录接口
+@bp.route('/login', methods=['POST'])
 def login():
     try:
         data = request.get_json()
@@ -49,7 +52,8 @@ def login():
             'message': '服务器错误'
         }), 500 
 
-@auth_bp.route('/register', methods=['POST'])
+# 注册接口
+@bp.route('/register', methods=['POST'])
 def register():
     try:
         data = request.get_json()
@@ -97,3 +101,19 @@ def register():
             'success': False,
             'message': '服务器错误'
         }), 500
+
+# 首页接口
+@bp.route('/')
+def index():
+    return jsonify({
+        'message': '欢迎使用学习助手API',
+        'status': 'running',
+        'endpoints': {
+            'auth': {
+                'login': '/api/auth/login',
+                'register': '/api/auth/register'
+            },
+            'feedback': '/api/feedback'
+        }
+    })
+

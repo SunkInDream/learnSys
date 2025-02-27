@@ -18,7 +18,7 @@ const Login = () => {
 
   const onFinish = async (values) => {
     try {
-      const response = await request.post('/api/auth/login', values);
+      const response = await request.post('/api/routes/login', values);
       if (response.data.success) {
         // 保存token和用户信息
         localStorage.setItem('token', response.data.token);

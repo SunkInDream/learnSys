@@ -18,7 +18,7 @@ const Register = () => {
     }
 
     try {
-      const response = await request.post('/api/auth/register', values);
+      const response = await request.post('/routes/register', values);
       if (response.data.success) {
         message.success('注册成功！');
         navigate('/login');
