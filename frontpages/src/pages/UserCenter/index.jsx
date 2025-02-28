@@ -26,7 +26,7 @@ const getInitialUserInfo = () => {
     phone: '',
     email: ''
   };
-};
+};  
 
 const UserCenter = () => {
   const [selectedMenu, setSelectedMenu] = useState('userInfo');

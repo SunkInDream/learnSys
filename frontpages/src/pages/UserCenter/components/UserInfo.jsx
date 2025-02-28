@@ -12,7 +12,7 @@ const UserInfo = ({ userInfo, onUpdate }) => {
   const [form] = Form.useForm();
   const [imageUrl, setImageUrl] = useState(userInfo.avatar);
   const [isEditing, setIsEditing] = useState(false);
-
+  
   // 处理图片上传前的操作
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
